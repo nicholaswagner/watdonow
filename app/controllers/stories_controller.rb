@@ -20,6 +20,12 @@ class StoriesController < ApplicationController
 
   # GET /stories/1/edit
   def edit
+    if @story.story_choices.count < 3
+      num = 4 - @story.story_choices.count
+      num.times do 
+        @story.story_choices.build
+      end
+    end
   end
 
   # POST /stories
@@ -72,7 +78,7 @@ class StoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
       params.require(:story).permit(:timeLimit, 
-        :storyText, :backgroundImage, :characterImage, :final, 
+        :storyText, :backgroundImage, :characterImage, :final, :start, :death, 
         story_choices_attributes: [:text, :weight, :storyIndex])
     end
 end
