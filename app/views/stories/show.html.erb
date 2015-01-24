@@ -30,6 +30,10 @@ Story Options:
 <% for story_choice in @story.story_choices do %>
   <p>
     <strong> <%= story_choice.text %> </strong>
+    <br>
+    <%= link_to 'Edit', edit_story_choice_path(story_choice) %>
+    <%= link_to 'Destroy', story_choice_path(story_choice), method: :delete, data: { confirm: 'Are you sure?' } %>
+
   </p>
 <% end %>
 
