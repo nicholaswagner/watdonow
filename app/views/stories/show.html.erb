@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timelimit:</strong>
+  <%= @story.timeLimit %>
+</p>
+
+<p>
+  <strong>Storytext:</strong>
+  <%= @story.storyText %>
+</p>
+
+<p>
+  <strong>Backgroundimage:</strong>
+  <%= @story.backgroundImage %>
+</p>
+
+<p>
+  <strong>Characterimage:</strong>
+  <%= @story.characterImage %>
+</p>
+
+<p>
+  <strong>Final:</strong>
+  <%= @story.final %>
+</p>
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>

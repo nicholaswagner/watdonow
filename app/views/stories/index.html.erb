@@ -1,0 +1,33 @@
+<h1>Listing stories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timelimit</th>
+      <th>Storytext</th>
+      <th>Backgroundimage</th>
+      <th>Characterimage</th>
+      <th>Final</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stories.each do |story| %>
+      <tr>
+        <td><%= story.timeLimit %></td>
+        <td><%= story.storyText %></td>
+        <td><%= story.backgroundImage %></td>
+        <td><%= story.characterImage %></td>
+        <td><%= story.final %></td>
+        <td><%= link_to 'Show', story %></td>
+        <td><%= link_to 'Edit', edit_story_path(story) %></td>
+        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Story', new_story_path %>

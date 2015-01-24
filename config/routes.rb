@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stories
+
   get 'static_pages/landing'
 
   # The priority is based upon order of creation: first created -> highest priority.
