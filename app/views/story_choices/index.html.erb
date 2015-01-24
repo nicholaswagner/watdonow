@@ -1,0 +1,29 @@
+<h1>Listing story_choices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Weight</th>
+      <th>Storyindex</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @story_choices.each do |story_choice| %>
+      <tr>
+        <td><%= story_choice.text %></td>
+        <td><%= story_choice.weight %></td>
+        <td><%= story_choice.storyIndex %></td>
+        <td><%= link_to 'Show', story_choice %></td>
+        <td><%= link_to 'Edit', edit_story_choice_path(story_choice) %></td>
+        <td><%= link_to 'Destroy', story_choice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Story choice', new_story_choice_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @story_choice.text %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @story_choice.weight %>
+</p>
+
+<p>
+  <strong>Storyindex:</strong>
+  <%= @story_choice.storyIndex %>
+</p>
+
+<%= link_to 'Edit', edit_story_choice_path(@story_choice) %> |
+<%= link_to 'Back', story_choices_path %>

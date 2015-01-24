@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :story_choices
+
   resources :stories
 
   get 'static_pages/landing'
