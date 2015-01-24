@@ -6,6 +6,9 @@
       <th>Storytext</th>
       <th>Background Art Key</th>
       <th>Number of Story Decisions</th>
+      <th>Death Card</th>
+      <th>Start Card</th>
+      <th>Final Card</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +20,25 @@
         <td><%= story.storyText %></td>
         <td><%= story.backgroundImage %></td>
         <td><%= story.story_choices.count %></td>
+        <% if story.death %>
+          <td class="label-danger"></td>
+        <% else %>
+          <td></td>
+        <% end %>
+
+        <% if story.start %>
+          <td class="label-success"></td>
+        <% else %>
+          <td></td>
+        <% end %>
+
+        <% if story.final %>
+          <td class="label-info"></td>
+        <% else %>
+          <td></td>
+        <% end %>
+        
+        
         <td><%= link_to 'Show', story %></td>
         <td><%= link_to 'Edit', edit_story_path(story) %></td>
         <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
