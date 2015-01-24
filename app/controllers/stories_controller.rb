@@ -49,7 +49,7 @@ class StoriesController < ApplicationController
   # PATCH/PUT /stories/1.json
   def update
     respond_to do |format|
-      if @story.update(story_params)
+      if @story.update_attributes(story_params)
         format.html { redirect_to @story, notice: 'Story was successfully updated.' }
         format.json { render :show, status: :ok, location: @story }
       else
@@ -79,6 +79,7 @@ class StoriesController < ApplicationController
     def story_params
       params.require(:story).permit(:timeLimit, 
         :storyText, :backgroundImage, :characterImage, :final, :start, :death, 
-        story_choices_attributes: [:text, :weight, :storyIndex])
+        story_choices_attributes: [:text, :weight, :storyIndex, :id],
+        )
     end
 end
