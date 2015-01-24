@@ -20,7 +20,6 @@ class StoriesController < ApplicationController
 
   # GET /stories/1/edit
   def edit
-    asdf
     if @story.story_choices.count < 4
       num = 4 - @story.story_choices.count
       num.times do
