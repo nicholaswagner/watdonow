@@ -50,7 +50,8 @@
         </div>
         <div class="field">
           <%= choice_form.label :storyIndex %><br>
-          <%= choice_form.number_field :storyIndex %>
+          <%= choice_form.select(:storyIndex, options_for_select(  Story.all.map { |story| [story.storyText, story.id]  } )) %>
+          <%#= choice_form.number_field :storyIndex %>
         </div>
       </li>
     <% end %>
