@@ -15,7 +15,7 @@ class StoriesController < ApplicationController
   # GET /stories/new
   def new
     @story = Story.new
-    2.times { @story.story_choices.build}
+    4.times { @story.story_choices.build}
   end
 
   # GET /stories/1/edit
