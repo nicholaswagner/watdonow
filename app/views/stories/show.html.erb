@@ -25,5 +25,9 @@
   <%= @story.final %>
 </p>
 
+<% for story_choice in @story.story_choices do %>
+  <strong> <%= story_choice.text %>
+<% end %>
+
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>

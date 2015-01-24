@@ -15,6 +15,7 @@ class StoriesController < ApplicationController
   # GET /stories/new
   def new
     @story = Story.new
+    2.times { @story.story_choices.build}
   end
 
   # GET /stories/1/edit
@@ -24,6 +25,7 @@ class StoriesController < ApplicationController
   # POST /stories
   # POST /stories.json
   def create
+
     @story = Story.new(story_params)
 
     respond_to do |format|
@@ -69,6 +71,8 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:timeLimit, :storyText, :backgroundImage, :characterImage, :final)
+      params.require(:story).permit(:timeLimit, 
+        :storyText, :backgroundImage, :characterImage, :final, 
+        story_choices_attributes: [:text, :weight, :storyIndex])
     end
 end

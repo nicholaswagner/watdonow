@@ -35,4 +35,6 @@ ActiveRecord::Schema.define(version: 20150124153809) do
     t.datetime "updated_at"
   end
 
+  add_index "story_choices", ["story_id"], name: "index_story_choices_on_story_id", using: :btree
+
 end

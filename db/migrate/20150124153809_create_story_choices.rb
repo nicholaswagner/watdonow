@@ -4,7 +4,7 @@ class CreateStoryChoices < ActiveRecord::Migration
       t.text :text
       t.integer :weight
       t.integer :storyIndex
-      t.references :story
+      t.belongs_to :story, index: true
 
       t.timestamps
     end
