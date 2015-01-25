@@ -6,10 +6,16 @@ body {
 	background-color: #15171c !important;
 	background-image: image-url('splash.jpg');
 	background-repeat: no-repeat;
-	background-size: 100%;
+	
+	background-position: top center;
 }
 
 .header {
-	min-height: 250px;
+	min-height: 500px;
 	display:block;
+}
+
+.container {
+	background-color: #FFFFFF;
+	padding: 30px;
 }
