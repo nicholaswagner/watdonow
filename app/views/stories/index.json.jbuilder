@@ -8,6 +8,8 @@ json.array!(@stories) do |story|
   json.background_image story.backgroundImage
   json.character_image story.characterImage
   json.final story.final
+  json.start story.start
+  json.death story.death
 
   json.choices story.story_choices do |choice|
   	json.choice_id choice.id
